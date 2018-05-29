@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clazer Calc", "Clazer Calc\Clazer Calc.csproj", "{35689BCB-1304-4508-88C2-E2CBB5F9EFF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glazer Calc", "Clazer Calc\Glazer Calc.csproj", "{35689BCB-1304-4508-88C2-E2CBB5F9EFF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
