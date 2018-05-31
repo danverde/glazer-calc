@@ -27,9 +27,12 @@ namespace Clazer_Calc
             this.InitializeComponent();
         }
 
-        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        private void WidthInput_CharacterReceived(UIElement sender, CharacterReceivedRoutedEventArgs args)
         {
+            if (Char.IsDigit(args.Character) == false)
+            {
 
+            }
         }
     }
 }
