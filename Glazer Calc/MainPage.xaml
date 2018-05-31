@@ -9,12 +9,39 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="249,152,0,0" Text="Width:" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="335,140,0,0" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="224,226,0,0" Text="Tint Color:" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="335,214,0,0" VerticalAlignment="Top" Width="128">
-            <ComboBoxItem Content="Blue" HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="75,43,0,0" Text="Glazer Calculator" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="35" FontWeight="Bold"/>
+
+        <!-- START LEFT COLUMN -->
+        <TextBlock HorizontalAlignment="Left" Margin="156,181,0,0" Text="Width:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="WidthInput" HorizontalAlignment="Left" Margin="238,178,0,0" Text="" VerticalAlignment="Top"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="150,250,0,0" Text="Height:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="HeightInput" HorizontalAlignment="Left" Margin="238,247,0,0" Text="" VerticalAlignment="Top"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="124,320,0,0" Text="Tint Color:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+        <ComboBox HorizontalAlignment="Left" Margin="238,317,0,0" VerticalAlignment="Top" Width="128">
+            <ComboBoxItem Content="Blue" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
+            <ComboBoxItem Content="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
+            <ComboBoxItem Content="Brown" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
         </ComboBox>
+
+        <TextBlock HorizontalAlignment="Left" Margin="133,392,0,0" Text="Quantity:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+        <Slider x:Name="QuantitySlider" HorizontalAlignment="Left" Margin="238,387,0,0" VerticalAlignment="Top" Width="128"/>
+        <TextBlock x:Name="SliderTextValue" HorizontalAlignment="Left" Margin="400,392,0,0" Text="{Binding ElementName=QuantitySlider,Path=Value}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+
+        <Button x:Name="CalculateButton" Content="Calculate" HorizontalAlignment="Left" Margin="405,480,0,0" VerticalAlignment="Top" FontSize="25"/>
+
+        <!-- START RIGHT COLUMN -->
+        <TextBlock x:Name="Message" HorizontalAlignment="Left" Margin="512,178,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="512,250,0,0" Text="Length of Wood:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Visibility="Collapsed"/>
+        <TextBlock x:Name="WoodOutput" HorizontalAlignment="Left" Margin="691,250,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="540,320,0,0" Text="Area of Glass:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Visibility="Collapsed"/>
+        <TextBlock x:Name="GlassOutput" HorizontalAlignment="Left" Margin="691,320,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="557,392,0,0" Text="Order Date:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Visibility="Collapsed"/>
+        <TextBlock x:Name="OrderDateOutput" HorizontalAlignment="Left" Margin="691,392,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
 
     </Grid>
 </Page>
