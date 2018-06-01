@@ -29,44 +29,56 @@ namespace Clazer_Calc
 
         private void CalculateButton_Click(object sender, RoutedEventArgs e)
         {
-            /* Validate Inputs */
-            bool validInputs = true;
+            /* Clear any previous error message */
+            Message.Text = "";
 
             try
             {
+                /* Ensure inputs are not empty */
+                if (WidthInput.Text == "")
+                {
+                    Message.Text = "Width must not be empty";
+                    return;
+                }
+                else if (HeightInput.Text == "")
+                {
+                    Message.Text = "Height must not be empty";
+                    return;
+                }
+                else if (TintColorInput.SelectedIndex == -1)
+                {
+                    Message.Text = "Must select a Tint Color";
+                    return;
+                }
+
+                /* Parse inputs */
                 double width = Double.Parse(WidthInput.Text);
                 double height = Double.Parse(HeightInput.Text);
 
                 double quantity = QuantitySlider.Value;
+               
+                /* Show labels */
+                WoodLabel.Visibility = (Visibility)0;
+                GlassLabel.Visibility = (Visibility)0;
+                OrderDateLabel.Visibility = (Visibility)0;
 
-                if (validInputs == true)
-                {
-                    /* Show labels */
-                    WoodLabel.Visibility = (Visibility)0;
-                    GlassLabel.Visibility = (Visibility)0;
-                    OrderDateLabel.Visibility = (Visibility)0;
-
-                    /* Calculate & Display results */
-                    WoodOutput.Text = (2 * (width + height) * 3.25).ToString();
-                    GlassOutput.Text = (2 * (width * height)).ToString();
-                    OrderDateOutput.Text = DateTime.Now.ToString();
-                }
+                /* Calculate & Display results */
+                WoodOutput.Text = (2 * (width + height) * 3.25).ToString();
+                GlassOutput.Text = (2 * (width * height)).ToString();
+                OrderDateOutput.Text = DateTime.Now.ToString();
 
             } catch (Exception Error)
             {
-                Message.Text = Error.Message;
+                Message.Text = $"Error: {Error.Message}";
             }            
         }
 
-        private bool ValidateInput(String input)
-        {
-            return false;
-        }
-
+        /* stops the user from entering a non-numeric character */
         private void ValidateKey(KeyRoutedEventArgs e)
         {
             List<Windows.System.VirtualKey> numbers = new List<Windows.System.VirtualKey>()
                 {
+                (Windows.System.VirtualKey)9,
                 (Windows.System.VirtualKey)48,
                 (Windows.System.VirtualKey)49,
                 (Windows.System.VirtualKey)50,
@@ -86,7 +98,8 @@ namespace Clazer_Calc
                 (Windows.System.VirtualKey)102,
                 (Windows.System.VirtualKey)103,
                 (Windows.System.VirtualKey)104,
-                (Windows.System.VirtualKey)105
+                (Windows.System.VirtualKey)105,
+                (Windows.System.VirtualKey)110
                 };
 
             if (numbers.Contains(e.Key) == false)
