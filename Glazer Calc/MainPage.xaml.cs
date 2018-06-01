@@ -32,6 +32,16 @@ namespace Clazer_Calc
             /* Clear any previous error message */
             Message.Text = "";
 
+            /* Hide labels */
+            WoodLabel.Visibility = (Visibility)1;
+            GlassLabel.Visibility = (Visibility)1;
+            OrderDateLabel.Visibility = (Visibility)1;
+
+            /* Reset values */
+            WoodOutput.Text = "";
+            GlassOutput.Text = "";
+            OrderDateOutput.Text = "";
+
             try
             {
                 /* Ensure inputs are not empty */

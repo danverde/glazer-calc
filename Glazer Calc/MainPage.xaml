@@ -32,7 +32,7 @@
         <Button x:Name="CalculateButton" Content="Calculate" HorizontalAlignment="Left" Margin="538,164,0,0" VerticalAlignment="Top" FontSize="25" Click="CalculateButton_Click"/>
 
         <!-- START RIGHT COLUMN -->
-        <TextBlock x:Name="Message" HorizontalAlignment="Left" Margin="302,465,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock x:Name="Message" HorizontalAlignment="Left" Margin="133,475,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
 
         <TextBlock x:Name="WoodLabel" HorizontalAlignment="Left" Margin="471,250,0,0" Text="Length of Wood (ft2):" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Visibility="Collapsed"/>
         <TextBlock x:Name="WoodOutput" HorizontalAlignment="Left" Margin="691,250,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
