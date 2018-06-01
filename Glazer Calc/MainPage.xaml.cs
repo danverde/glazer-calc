@@ -34,5 +34,41 @@ namespace Clazer_Calc
 
             }
         }
+
+        private void CalculateButton_Click(object sender, RoutedEventArgs e)
+        {
+            /* Validate Inputs */
+            bool validInputs = true;
+
+            try
+            {
+                double width = Double.Parse(WidthInput.Text);
+                double height = Double.Parse(HeightInput.Text);
+
+                double quantity = QuantitySlider.Value;
+
+                if (validInputs == true)
+                {
+                    /* Show labels */
+                    WoodLabel.Visibility = (Visibility)0;
+                    GlassLabel.Visibility = (Visibility)0;
+                    OrderDateLabel.Visibility = (Visibility)0;
+
+                    /* Calculate & Display results */
+                    WoodOutput.Text = (2 * (width + height) * 3.25).ToString();
+                    GlassOutput.Text = (2 * (width * height)).ToString();
+                    OrderDateOutput.Text = DateTime.Now.ToString();
+                }
+
+            } catch (Exception Error)
+            {
+                Message.Text = Error.Message;
+            }            
+        }
+
+        private bool ValidateInput(String input)
+        {
+            return false;
+        }
     }
 }
