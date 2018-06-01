@@ -27,14 +27,6 @@ namespace Clazer_Calc
             this.InitializeComponent();
         }
 
-        private void WidthInput_CharacterReceived(UIElement sender, CharacterReceivedRoutedEventArgs args)
-        {
-            if (Char.IsDigit(args.Character) == false)
-            {
-
-            }
-        }
-
         private void CalculateButton_Click(object sender, RoutedEventArgs e)
         {
             /* Validate Inputs */
@@ -69,6 +61,48 @@ namespace Clazer_Calc
         private bool ValidateInput(String input)
         {
             return false;
+        }
+
+        private void ValidateKey(KeyRoutedEventArgs e)
+        {
+            List<Windows.System.VirtualKey> numbers = new List<Windows.System.VirtualKey>()
+                {
+                (Windows.System.VirtualKey)48,
+                (Windows.System.VirtualKey)49,
+                (Windows.System.VirtualKey)50,
+                (Windows.System.VirtualKey)51,
+                (Windows.System.VirtualKey)52,
+                (Windows.System.VirtualKey)53,
+                (Windows.System.VirtualKey)54,
+                (Windows.System.VirtualKey)55,
+                (Windows.System.VirtualKey)56,
+                (Windows.System.VirtualKey)57,
+                (Windows.System.VirtualKey)96,
+                (Windows.System.VirtualKey)97,
+                (Windows.System.VirtualKey)98,
+                (Windows.System.VirtualKey)99,
+                (Windows.System.VirtualKey)100,
+                (Windows.System.VirtualKey)101,
+                (Windows.System.VirtualKey)102,
+                (Windows.System.VirtualKey)103,
+                (Windows.System.VirtualKey)104,
+                (Windows.System.VirtualKey)105
+                };
+
+            if (numbers.Contains(e.Key) == false)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void WidthInput_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            ValidateKey(e);
+        }
+
+        private void HeightInput_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            ValidateKey(e);
         }
     }
 }

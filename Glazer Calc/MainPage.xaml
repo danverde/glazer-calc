@@ -13,10 +13,10 @@
 
         <!-- START LEFT COLUMN -->
         <TextBlock HorizontalAlignment="Left" Margin="156,181,0,0" Text="Width:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="WidthInput" HorizontalAlignment="Left" Margin="238,178,0,0" Text="" VerticalAlignment="Top" Width="128" CharacterReceived="WidthInput_CharacterReceived"/>
+        <TextBox x:Name="WidthInput" HorizontalAlignment="Left" Margin="238,178,0,0" Text="" VerticalAlignment="Top" Width="128" KeyDown="WidthInput_KeyDown"/>
 
         <TextBlock HorizontalAlignment="Left" Margin="150,250,0,0" Text="Height:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="HeightInput" HorizontalAlignment="Left" Margin="238,247,0,0" Text="" VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="HeightInput" HorizontalAlignment="Left" Margin="238,247,0,0" Text="" VerticalAlignment="Top" Width="128" KeyDown="HeightInput_KeyDown"/>
 
         <TextBlock HorizontalAlignment="Left" Margin="124,320,0,0" Text="Tint Color:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
         <ComboBox HorizontalAlignment="Left" Margin="238,317,0,0" VerticalAlignment="Top" Width="128">
